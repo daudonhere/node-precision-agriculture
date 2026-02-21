@@ -2,7 +2,9 @@
 
 ESP32 firmware for SmartFarm IoT sensor node. Supports Wokwi simulation and physical device deployment.
 
-## 📋 Specifications
+![Project Screenshot](./screenshoot.png)
+
+## Specifications
 
 | Item | Detail |
 |------|--------|
@@ -16,7 +18,7 @@ ESP32 firmware for SmartFarm IoT sensor node. Supports Wokwi simulation and phys
 
 ---
 
-## 🛠️ Required VSCode Extensions
+## Required VSCode Extensions
 
 Install these 3 extensions for development:
 
@@ -42,17 +44,13 @@ code --install-extension ms-vscode.cpptools
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### Option 1: Wokwi Simulation (No Hardware Required)
 
 **Step 1: Open Diagram**
-```bash
-cd ~/Documents/github/integrated-precision-agriculture/smartfarm-node
-```
-
 In VSCode Explorer:
-1. Open `smartfarm-node/` folder
+1. Open `node-precision-agriculture/` folder
 2. Click on `diagram.json` file
 3. Click **"Start Simulation"** button above the editor
 
@@ -66,7 +64,7 @@ In Serial Monitor, wait for output like this:
 ```
 WiFi Connected
 MQTT Connected
-{"id":"NODE-01","ts":12345678,"lat":-6.92148,"lon":106.92617,"message":"System Normal","payload":{"temp":28.5,"hum":65,"moist":55,"ph":6.8,"n":200,"p":160,"k":100,"water":25}}
+{"id":"NODE-01","ts":12345678,"lat":-6.987878787,"lon":106.9878787,"message":"System Normal","payload":{"temp":28.5,"hum":65,"moist":55,"ph":6.8,"n":200,"p":160,"k":100,"water":25}}
 ```
 
 Data publishes every **3 seconds**.
@@ -87,7 +85,7 @@ Data publishes every **3 seconds**.
 ### Option 2: Build Firmware (Without Upload)
 
 ```bash
-cd ~/Documents/github/integrated-precision-agriculture/smartfarm-node
+cd ~/node-precision-agriculture
 
 # Build firmware
 pio run
@@ -144,7 +142,7 @@ MQTT Connected
 
 ---
 
-## 📊 MQTT Data Format
+## MQTT Data Format
 
 **Topic:** `daud/smartfarm/data`
 
@@ -153,8 +151,8 @@ MQTT Connected
 {
   "id": "NODE-01",
   "ts": 1234567890,
-  "lat": -6.92148,
-  "lon": 106.92617,
+  "lat": -6.9898788,
+  "lon": 106.926876765,
   "message": "System Normal",
   "payload": {
     "temp": 28.5,
@@ -189,7 +187,7 @@ MQTT Connected
 
 ---
 
-## 🔧 PlatformIO Commands
+## PlatformIO Commands
 
 | Command | Description |
 |---------|-------------|
@@ -208,10 +206,10 @@ MQTT Connected
 
 ---
 
-## 📁 Folder Structure
+## Folder Structure
 
 ```
-smartfarm-node/
+node-precision-agriculture/
 ├── src/
 │   └── main.cpp          # Main firmware code
 ├── include/              # Header files (.h)
@@ -225,7 +223,7 @@ smartfarm-node/
 
 ---
 
-## 🔌 Pin Mapping
+## Pin Mapping
 
 | Component | Pin | Type |
 |-----------|-----|------|
@@ -243,7 +241,7 @@ smartfarm-node/
 
 ---
 
-## ⚠️ Troubleshooting
+## Troubleshooting
 
 ### Wokwi Simulation
 
@@ -265,7 +263,7 @@ smartfarm-node/
 
 ---
 
-## 📝 Development Flow
+## Development Flow
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -294,7 +292,7 @@ smartfarm-node/
 
 ---
 
-## 🔗 Resources
+## Resources
 
 - [Wokwi Documentation](https://docs.wokwi.com/)
 - [PlatformIO Documentation](https://docs.platformio.org/)
@@ -303,7 +301,3 @@ smartfarm-node/
 - [ArduinoJson Library](https://arduinojson.org/)
 
 ---
-
-## 📄 License
-
-Same as parent project license.
